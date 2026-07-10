@@ -1,4 +1,5 @@
 import Layout from "./Layout";
+import Student from "./student"
 function App() {
   return (
     <div>

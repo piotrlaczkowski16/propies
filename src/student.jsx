@@ -1,8 +1,9 @@
-function Student(props) {
+function Student ({name, age, city}) {
     return (
         <div>
-            <h2>name: {props.name}</h2>
-            <h3>age: {props.age}</h3>
+            <h2>name: {name}</h2>
+            <h3>age: {age}</h3>
+            <p>city: {city}</p>
         </div>
         );
 }
