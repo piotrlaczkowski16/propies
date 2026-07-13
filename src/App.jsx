@@ -15,7 +15,7 @@ function App() {
   return (
     <div>
       {students
-        .filter((student) => showStudents.includes(student))
+        .filter((student) => student !== "falafel" && student !== "alberto")
         .map((student, index) => (
         <h2 key={index}>{student}</h2>
         ))}
