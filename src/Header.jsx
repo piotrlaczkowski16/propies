@@ -1,31 +1,22 @@
 function Header(props) {
   return (
+    <div>
     <header
-      style={{
-        backgroundColor: "grey",
-        padding: "20px",
-      }}
-    >
-      <h1>{props.title}</h1>
+      style={{ backgroundColor: "grey", padding: "10px", display: "flex", justifyContent: "space-between" }}>
+        <>
+        <h2 style={{float: "left"}}>{props.title}</h2>
+        </>
+        <div>
+        <ul style={{justifyContent: "space-between"}}>
+          <a href="home#">   home</a>
+          <a href="about us#">  about us</a>
+        <a href="more#">  more</a>
+          <a href="exit#">  exit</a>
+        </ul>
+        </div>
 
-      <nav>
-        <a href="#" style={{ color: "white", marginRight: "15px" }}>
-          {props.nav1}
-        </a>
-
-        <a href="#" style={{ color: "white", marginRight: "15px" }}>
-          {props.nav2}
-        </a>
-
-        <a href="#" style={{ color: "white", marginRight: "15px" }}>
-          {props.nav3}
-        </a>
-
-        <a href="#" style={{ color: "white" }}>
-          {props.nav4}
-        </a>
-      </nav>
     </header>
+    </div>
   );
 }
 

@@ -1,53 +1,30 @@
-import React from "react";
+import { useState } from "react";
+
 function App() {
-    const students = [
-      {name: "Rahim",
-       age: 20,
-       city: "city"
-      },
+  const [count, setCount] = useState(0);
 
-      {name: "Karim",
-        age: 21,
-        city: "city2"
-      },
-      {name: "Jamal",
-        age: 16,
-        city: "bydgoszcz"
-      } ,
-      {name: "alberto",
-        age: 16,
-        city: "bydgoszcz3"
-      }  ,
-      {name: "hasan",
-        age: 26,
-        city: "bydgoszcz16"
-      } ,
-      {name: "falafel",
-        age: 56,
-        city: "city67"
-      } ,
-      {name: "ceyrowsky",
-        age: "yes",
-        city: "hawaii"
-      }  ,
-      {name: "NIEMCY!",
-        age: 500,
-        city: "berlin"
-      } ,
-    ];
-    const showStudents = ["falafel", "hasan"];
-
-  return (
+  return(
     <div>
-      {students.map ((student, index) => (
-        <div>
-          <h2>{student.name}</h2>
-          <p>age:{student.age}</p>
-          <p>city: {student.city}</p>
-        </div>
-      ))}
+    <h1>{count}</h1>
+    <div  style={{display:"flex", textAlign: "center"}}>
+    <button style={{width: "150px", height:"300px"}}
+      onClick={()=> setCount (count + 13)}
+      >
+        Increase
+      </button>
+      <button style={{width: "150px", height:"300px"}}
+      onClick={()=> setCount (0)}
+      >
+        clear
+      </button>
+      <button style={{width: "150px", height:"300px"}}
+      onClick={()=> setCount (count - 17)}
+      >
+        decrease
+      </button>
+      
+      </div>
     </div>
   );
 }
-
 export default App;
