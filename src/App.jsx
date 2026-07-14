@@ -1,15 +1,16 @@
 import { useState } from "react";
 
 function App() {
-  const [liked, setLiked] = useState(false);
+  function handleSubmit (event) {
+    event.preventDefault();
+    alert("your important form has been Submited");
+  }
 
   return(
-    <div>
-    <button  style={{width:"400px", height:"300px"}} onClick={()=> setLiked(!liked)}>
-      {liked ? "Liked" : "Like"}
-    </button>
-      
-    </div>
+      <form onSubmit={handleSubmit}>
+      <input type="text" placeholder="name" />
+      <button type="submit">wyslij</button>
+      </form>
   );
 }
 export default App;
