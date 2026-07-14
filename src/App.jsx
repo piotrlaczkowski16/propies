@@ -1,16 +1,15 @@
 import { useState } from "react";
 
 function App() {
-  function handleSubmit (event) {
-    event.preventDefault();
-    alert("your important form has been Submited");
-  }
+  const stock = 5 ;
 
-  return(
-      <form onSubmit={handleSubmit}>
-      <input type="text" placeholder="name" />
-      <button type="submit">wyslij</button>
-      </form>
+  return (
+    <div>
+      {stock > 0
+      ? <h1>in stock</h1>
+      : <h1>nima nie było i nie będzie</h1>}
+    </div>
   );
 }
+
 export default App;
