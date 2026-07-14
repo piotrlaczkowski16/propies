@@ -1,13 +1,43 @@
 import { useState } from "react";
+import "./App.css";
+
+import movies from "./Movies";
+import SearchBar from "./component/Searchbar";
+import MovieCard from "./component/Moviecard";
 
 function App() {
-  const stock = 5 ;
+
+  const [search, setSearch] = useState("");
+
+  const filteredMovies = movies.filter((movie) =>
+    movie.title.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
-    <div>
-      {stock > 0
-      ? <h1>in stock</h1>
-      : <h1>nima nie było i nie będzie</h1>}
+    <div className="App">
+
+      <h1>Movie Search App</h1>
+
+      <SearchBar
+        search={search}
+        setSearch={setSearch}
+      />
+
+      <div className="movies">
+
+        {filteredMovies.length > 0 ? (
+          filteredMovies.map((movie) => (
+            <MovieCard
+              key={movie.id}
+              movie={movie}
+            />
+          ))
+        ) : (
+          <h2>No Movie Found</h2>
+        )}
+
+      </div>
+
     </div>
   );
 }
